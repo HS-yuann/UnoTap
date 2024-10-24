@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Image</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #000428, #004e92, #FF1493); /* Gradient like next.html */
+            color: white;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #image-container {
+            width: 300px;
+            height: auto;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Adding a shadow to the image */
+            border-radius: 20px;
+        }
+
+        #write-box {
+            text-align: center;
+            border: none;
+            padding: 20px;
+            font-size: 1.5em;
+            color: white;
+            width: 350px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1); /* Transparent white box */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Box shadow for depth */
+        }
+
+        #write-box p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Hover effect for the box */
+        #write-box:hover {
+            background: rgba(255, 255, 255, 0.2); /* Slightly lighter hover background */
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Next button styling */
+        .next-button {
+            margin-top: 30px;
+            font-size: 1.5em;
+            padding: 15px 30px;
+            background: linear-gradient(to right, #384f94, #6a4e8a); /* Gradient style */
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .next-button:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.9);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Step 3 heading -->
+    <h2>Step 3</h2>
+
+    <!-- Display the static image -->
+    <img id="image-container" src="image4.png" alt="Your Image">
+
+    <!-- Box with 'CHOOSE BEST OPTION' message -->
+    <div id="write-box">
+        <p>CHOOSE BEST OPTION</p>
+    </div>
+
+    <!-- Next button -->
+    <button class="next-button" onclick="goToNextPage()">Next</button>
+
+    <script>
+        function goToNextPage() {
+            // Redirect to the next page (replace 'hover.html' with the actual next page if different)
+            window.location.href = 'hover.html';
+        }
+    </script>
+
+</body>
+</html>
+

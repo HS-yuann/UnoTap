@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniCard Completion</title>
+
+    <!-- Import Google Font 'Poppins' for a clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Basic page styling */
+        body {
+            font-family: 'Poppins', sans-serif; /* Modern font */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #000428, #004e92, #FF1493); /* Black, Blue, Pink gradient */
+            color: white;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Container for the message */
+        .message-container {
+            text-align: center;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+            max-width: 90%;
+            width: 600px;
+            position: relative;
+        }
+
+        /* Centered heading with reduced font size to fit inside box */
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            white-space: normal; /* Allows the text to wrap if needed */
+            text-align: center;
+        }
+
+        /* Sparkle animations */
+        .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #FFC0CB; /* Light pink */
+            border-radius: 50%;
+            opacity: 0;
+            animation: sparkle-animation 2s infinite ease-in-out;
+        }
+
+        /* Sparkle animation keyframes */
+        @keyframes sparkle-animation {
+            0%, 100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 1;
+            }
+        }
+
+        /* Sparkles in pink and blue */
+        .sparkle-blue {
+            background-color: #00ffff; /* Light blue */
+        }
+
+        /* Button styling with gradient */
+        .next-button {
+            font-size: 1.5em;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #FF1493, #004e92); /* Pink to blue gradient */
+            color: black; /* Black text */
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Dark shadow */
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-top: 30px;
+        }
+
+        /* Button hover effect */
+        .next-button:hover {
+            transform: translateY(-5px); /* Lift button up on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Button active (click) animation */
+        .next-button:active {
+            transform: scale(0.95); /* Scale down on click */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        /* UnoTap footer styling */
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 2.5em;
+            letter-spacing: 0.2em;
+            color: #FFC0CB; /* Pink footer text */
+            background-color: rgba(0, 0, 0, 0.3); /* Slightly transparent background for the footer */
+            padding: 20px 0;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em; /* Smaller title on mobile */
+            }
+
+            .next-button {
+                font-size: 1.2em;
+                padding: 10px 30px;
+            }
+
+            .footer {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="message-container">
+        <h1>You Are Now Done With Your New Card!</h1>
+
+        <!-- Sparkles for a festive look -->
+        <div class="sparkle" style="top: 20%; left: 10%;"></div>
+        <div class="sparkle sparkle-blue" style="top: 15%; right: 20%;"></div>
+        <div class="sparkle" style="top: 50%; left: 5%;"></div>
+        <div class="sparkle sparkle-blue" style="top: 40%; right: 25%;"></div>
+        <div class="sparkle" style="top: 70%; left: 15%;"></div>
+        <div class="sparkle sparkle-blue" style="top: 80%; right: 30%;"></div>
+
+        <!-- Button to redirect or finish action -->
+        <button class="next-button" onclick="finishProcess()">Done</button>
+    </div>
+
+    <!-- Footer text with 'UnoTap' mention, styled as a border -->
+    <div class="footer">-- UnoTap --</div>
+
+    <script>
+        // Function to simulate ending the process
+        function finishProcess() {
+            // You can redirect or show a final message if needed
+            alert("Thank you for using UniCard!");
+        }
+
+        // Randomize sparkle positions and timings
+        const sparkles = document.querySelectorAll('.sparkle');
+        sparkles.forEach(sparkle => {
+            const randomDelay = Math.random() * 2 + 's';
+            const randomDuration = Math.random() * 1.5 + 0.5 + 's';
+            sparkle.style.animationDelay = randomDelay;
+            sparkle.style.animationDuration = randomDuration;
+        });
+    </script>
+
+</body>
+</html>

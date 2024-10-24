@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to UniCard</title>
+
+    <!-- Import Google Font 'Poppins' for a clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Basic page styling */
+        body {
+            font-family: 'Poppins', sans-serif; /* Modern font */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #000428, #004e92, #FF1493); /* Black, Blue, Pink gradient */
+            color: white;
+        }
+
+        /* Container for the message */
+        .message-container {
+            text-align: center;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+            max-width: 90%;
+            width: 600px;
+        }
+
+        /* Big heading, inspired by the look you provided */
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        /* Sub-heading to replicate a smaller upper message */
+        h2 {
+            font-size: 1.2em;
+            letter-spacing: 0.1em;
+            margin-bottom: 30px;
+            color: #FFC0CB; /* Light pink for the small text */
+        }
+
+        /* Button styling with gradient, similar to image */
+        .next-button {
+            font-size: 1.5em;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #FF1493, #004e92); /* Pink to blue gradient */
+            color: black; /* Black text */
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Dark shadow */
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* Button hover effect */
+        .next-button:hover {
+            transform: translateY(-5px); /* Lift button up on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Button active (click) animation */
+        .next-button:active {
+            transform: scale(0.95); /* Scale down on click */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em; /* Smaller title on mobile */
+            }
+
+            .next-button {
+                font-size: 1.2em;
+                padding: 10px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="message-container">
+        <h1>Meet Your UniCard</h1>
+        <button class="next-button" onclick="goToNextPage()">Let's Get Started</button>
+    </div>
+
+    <script>
+        // Function to go to the next page
+        function goToNextPage() {
+            window.location.href = "next.html"; // Redirect to next page
+        }
+    </script>
+
+</body>
+</html>

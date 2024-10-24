@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download NFC Reader</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #000428, #004e92, #FF1493); /* Black, Blue, Pink gradient */
+            color: white;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .platform-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 1200px;
+            flex-wrap: wrap; /* Enable wrapping for smaller screens */
+        }
+
+        .platform {
+            flex: 1 1 45%; /* Adjusts the width to fit two per row on larger screens */
+            max-width: 45%;
+            padding: 30px;
+            text-align: center;
+            border: none;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .platform img {
+            max-width: 80px;
+            margin-bottom: 20px;
+        }
+
+        .platform p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .platform button {
+            font-size: 1.2em;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* iOS Button Styling */
+        .platform button.ios {
+            background-color: #384f94; /* Matching color to the gradient behind iOS */
+            color: white;
+        }
+
+        /* Android Button Styling */
+        .platform button.android {
+            background-color: #6a4e8a; /* Matching color to the gradient behind Android */
+            color: white;
+        }
+
+        .platform button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Next Button with Gradient */
+        .next-button {
+            margin-top: 40px;
+            font-size: 1.5em;
+            padding: 15px 30px;
+            background: linear-gradient(to right, #384f94, #6a4e8a); /* Gradient style */
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .next-button:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.9);
+        }
+
+        /* Responsive adjustments for mobile */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .platform {
+                flex: 1 1 100%;
+                max-width: 100%;
+                margin-right: 0;
+                padding: 20px;
+            }
+
+            .platform img {
+                max-width: 70px;
+            }
+
+            .platform button {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+
+            .next-button {
+                font-size: 1.2em;
+                padding: 12px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .platform img {
+                max-width: 60px;
+            }
+
+            .platform button {
+                font-size: 0.9em;
+                padding: 8px 15px;
+            }
+
+            .next-button {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Download Free NFC Reader</h1>
+
+    <div class="platform-container">
+        <!-- iOS Section -->
+        <div class="platform">
+            <img src="image1.png" alt="NFC Tools iOS">
+            <p>For iOS Devices</p>
+            <button class="ios" id="ios-download">Download for iOS</button>
+        </div>
+
+        <!-- Android Section -->
+        <div class="platform">
+            <img src="image1.png" alt="NFC Tools Android">
+            <p>For Android Devices</p>
+            <button class="android" id="android-download">Download for Android</button>
+        </div>
+    </div>
+
+    <!-- Next button leading to upload.html -->
+    <button class="next-button" onclick="goToNextPage()">Next</button>
+
+    <script>
+        // Redirect to the correct app store based on the device
+        function detectDevice() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Detect iOS devices
+            if (/iPhone|iPad|iPod/i.test(userAgent)) {
+                window.location.href = "https://apps.apple.com/us/app/nfc-tools/id1252962749";
+            }
+
+            // Detect Android devices
+            else if (/android/i.test(userAgent)) {
+                window.location.href = "https://play.google.com/store/apps/details?id=com.wakdev.wdnfc&hl=en_SG&pli=1";
+            }
+        }
+
+        // Add event listeners for buttons
+        document.getElementById('ios-download').addEventListener('click', function() {
+            window.location.href = "https://apps.apple.com/us/app/nfc-tools/id1252962749";
+        });
+
+        document.getElementById('android-download').addEventListener('click', function() {
+            window.location.href = "https://play.google.com/store/apps/details?id=com.wakdev.wdnfc&hl=en_SG&pli=1";
+        });
+
+        // Function to navigate to the upload.html page
+        function goToNextPage() {
+            window.location.href = "upload.html";  // Navigate to upload.html
+        }
+
+        // Optionally, you can auto-detect the device on page load
+        window.onload = detectDevice;
+    </script>
+
+</body>
+</html>
