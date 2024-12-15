@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniCard Information</title>
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: 'Poppins', sans-serif; /* Modern font */
+            margin: 0;
+            color: white;
+            line-height: 1.6;
+            scroll-snap-type: y mandatory; /* Enable scroll snap */
+            scroll-behavior: smooth; /* Smooth scrolling */
+            background: linear-gradient(135deg, #000428, #004e92, #FF1493); /* Black, Blue, Pink gradient */
+            background-attachment: fixed; /* Fix the gradient for seamless flow */
+        }
+
+        /* General Section Styling */
+        section {
+            min-height: 100vh; /* Each section takes up full screen height */
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            scroll-snap-align: start; /* Snap to each section */
+            position: relative;
+        }
+
+        /* Section headings */
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Section text */
+        p {
+            max-width: 800px;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        /* Gradient button styling */
+        .button {
+            font-size: 1.2em;
+            padding: 10px 30px;
+            background: rgba(255, 255, 255, 0.2); /* Semi-transparent */
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Button active (click) animation */
+        .button:active {
+            transform: scale(0.95);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em; /* Smaller title on mobile */
+            }
+
+            p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <h1>About Us</h1>
+        <p>
+            UniCard is your ultimate solution for seamless digital card integration. We aim to redefine the way you connect with your audience by providing cutting-edge NFC technology.
+        </p>
+        <button class="button" onclick="alert('Learn more about UniCard!')">Learn More</button>
+    </section>
+
+    <!-- Product Features Section -->
+    <section id="features">
+        <h1>Product Features</h1>
+        <p>
+            Our product offers hassle-free NFC compatibility, quick setup, and unparalleled reliability. With UniCard, managing your digital business cards has never been easier.
+        </p>
+        <button class="button" onclick="alert('Explore UniCard features!')">Explore Features</button>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <h1>Pricing</h1>
+        <p>Choose the plan that fits your needs!</p>
+
+        <!-- Scrollable pricing container with navigation arrows -->
+        <div class="pricing-wrapper">
+            <!-- Left Scroll Arrow -->
+            <button class="scroll-arrow left-arrow" onclick="scrollLeft()">&#8249;</button>
+
+        
+        <!-- Scrollable pricing container -->
+        <div class="pricing-container">
+            <!-- Tier 1 -->
+            <div class="pricing-card">
+                <img src="card.png" alt="Basic Plan">
+                <h2>Basic</h2>
+                <p>$25/card</p>
+                <p>Ideal for individuals/students starting out.</p>
+                <button class="button" onclick="alert('Basic Plan Selected!')">Select</button>
+            </div>
+
+            <!-- Tier 2 -->
+            <div class="pricing-card">
+                <img src="card.png" alt="Standard Plan">
+                <h2>Standard</h2>
+                <p>$10/card</p>
+                <p>Great for small teams and businesses.</p>
+                <button class="button" onclick="alert('Standard Plan Selected!')">Select</button>
+            </div>
+
+            <!-- Tier 3 -->
+            <div class="pricing-card">
+                <img src="card.png" alt="Premium Plan">
+                <h2>Premium</h2>
+                <p>$10/card</p>
+                <p>Perfect for scaling your operations.</p>
+                <button class="button" onclick="alert('Premium Plan Selected!')">Select</button>
+            </div>
+
+            <!-- Tier 4 -->
+            <div class="pricing-card">
+                <img src="card.png" alt="Enterprise Plan">
+                <h2>Enterprise</h2>
+                <p>$10/card</p>
+                <p>Tailored for large enterprises.</p>
+                <button class="button" onclick="alert('Enterprise Plan Selected!')">Select</button>
+            </div>
+        </div>
+        <!-- Right Scroll Arrow -->
+        <button class="scroll-arrow right-arrow" onclick="scrollRight()">&#8250;</button>
+    </div>
+    </section>
+
+    <style>
+        /* Pricing Section Wrapper */
+        .pricing-wrapper {
+            position: relative; /* For absolute positioning of arrows */
+            display: flex;
+            align-items: center;
+            overflow: hidden; /* Hide overflow for better visuals */
+        }
+    
+        /* Pricing Container */
+        .pricing-container {
+            display: flex;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            gap: 20px; /* Space between cards */
+            padding: 20px 0;
+            scrollbar-width: none; /* Hide scrollbar */
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+    
+        /* Styling for each pricing card */
+        .pricing-card {
+            min-width: 300px; /* Set fixed width for each card */
+            background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Box shadow for depth */
+            text-align: center;
+            padding: 20px;
+            flex-shrink: 0; /* Prevent cards from shrinking */
+        }
+    
+        .pricing-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+    
+        .pricing-card h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+    
+        .pricing-card p {
+            font-size: 1em;
+            margin: 10px 0;
+        }
+    
+        /* Hide scrollbar in WebKit-based browsers */
+        .pricing-container::-webkit-scrollbar {
+            display: none;
+        }
+    
+        /* Arrow Buttons */
+        .scroll-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2); /* Transparent background */
+            border: none;
+            color: white;
+            font-size: 2em;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, background 0.3s ease;
+            z-index: 1;
+        }
+    
+        .scroll-arrow:hover {
+            transform: translateY(-50%) scale(1.1);
+            background: rgba(255, 255, 255, 0.4); /* Brighter on hover */
+        }
+    
+        .left-arrow {
+            left: 10px; /* Position on the left */
+        }
+    
+        .right-arrow {
+            right: 10px; /* Position on the right */
+        }
+    
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .pricing-card {
+                min-width: 250px; /* Smaller cards on mobile */
+            }
+        }
+    </style>
+
+<script>
+    const pricingContainer = document.querySelector('.pricing-container');
+
+    function scrollLeft() {
+        pricingContainer.scrollBy({
+            left: -300, // Adjust the scroll amount as needed
+            behavior: 'smooth'
+        });
+    }
+
+    function scrollRight() {
+        pricingContainer.scrollBy({
+            left: 300, // Adjust the scroll amount as needed
+            behavior: 'smooth'
+        });
+    }
+</script>
+    
+    
+
+    <!-- Contact Us Section -->
+    <section id="contact">
+        <h1>Contact Us</h1>
+        <p>
+            Got questions? Reach out to us anytime at support@unicard.com or call us at (65) 12345678. We’re here to help!
+        </p>
+        <button class="button" onclick="alert('Get in touch with UniCard!')">Get in Touch</button>
+    </section>
+
+</body>
+</html>
+
+
